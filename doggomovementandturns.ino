@@ -31,13 +31,13 @@ Zumo32U4Motors motors;
 Zumo32U4ButtonA buttonA;
 Zumo32U4Encoders encoders;
 
-int turnSpeed = 150; //I wonder what it'd be like if I turn up the turn speed. Would it have a smaller turn radius?
+int turnSpeed = 150;
 int motorSpeed = 250;
 
 // --- Setup Method
 void setup() {
   buttonA.waitForButton();
-  delay(1000);
+  delay(100);
   turnSensorSetup();
   delay(500);
   turnSensorReset();
@@ -124,11 +124,11 @@ void loop() {
      delay(1000);
      turnLeft(96);
      delay(1000);
-     forward(580/2);
+     forward(580);
      delay(1000);
      turnLeft(45);
      delay(1000);
-     forward(710/2);
+     forward(710);
      turnRight(21);
      delay(1000);
      forward(1474/2);
