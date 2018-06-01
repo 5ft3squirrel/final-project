@@ -159,8 +159,11 @@ void loop() {
   if (buttonPress) { 
     while(1){
     Doggo();
+    delay(y);
     turnLeft(10);
+    delay(y);
     forward(10);
+    delay(y);
       }
 }
 }
