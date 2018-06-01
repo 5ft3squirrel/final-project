@@ -148,7 +148,7 @@ void Doggo() {
      turnRight(93);
      delay(y);
      forward(918/x);
-     //turnRight(21);
+     turnRight(21);
      //^this would make the new starting line parallel to the first line of the dog, since the last line is not parallel to the first line
 }
 void StraightBoi(){
