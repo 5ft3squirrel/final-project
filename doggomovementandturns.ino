@@ -34,6 +34,7 @@ Zumo32U4Encoders encoders;
 int turnSpeed = 150;
 int motorSpeed = 250;
 int x = 10;
+int y = 100;
 
 // --- Setup Method
 void setup() {
@@ -113,37 +114,37 @@ void Doggo() {
    delay(5000);
      // because 0.0927in
      forward(927/x);
-     delay(1000);
+     delay(y);
      turnLeft(96);
-     delay(1000);
+     delay(y);
      forward(580/x);
-     delay(1000);
+     delay(y);
      turnLeft(45);
-     delay(1000);
+     delay(y);
      forward(710/x);
      turnRight(21);
-     delay(1000);
+     delay(y);
      forward(1474/x);
       //should be pupper head and front limbs  
-     delay(1000);
+     delay(y);
      turnRight(180);
      forward(1474/x);
-     delay(1000);
+     delay(y);
      //go back
      turnLeft(76);
-     delay(1000);
+     delay(y);
      forward(2899/x);
-     delay(1000);
+     delay(y);
      turnRight(76);
-     delay(1000);
+     delay(y);
      forward(1229/x);
-     delay(1000);
+     delay(y);
      turnRight(180);
-     delay(1000);
+     delay(y);
      forward(1229/x);
-     delay(1000);
+     delay(y);
      turnRight(93);
-     delay(1000);
+     delay(y);
      forward(918/x);
 }
 void loop() {
@@ -155,8 +156,7 @@ void loop() {
   lcd.print(" ");
   //if we press A, then it starts:
   bool buttonPress = buttonA.getSingleDebouncedPress();
-  if (buttonPress) {
-     
+  if (buttonPress) { 
     while(1){
     Doggo();
     turnRight(2);
