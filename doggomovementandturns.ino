@@ -33,8 +33,10 @@ Zumo32U4Encoders encoders;
 
 int turnSpeed = 150;
 int motorSpeed = 250;
-int x = 10;
-int y = 100;
+int x = 4;
+int y = 200;
+int z = 100;
+int i = 20;
 
 // --- Setup Method
 void setup() {
@@ -111,7 +113,7 @@ void reverse(long count) {
 }
 
 void Doggo() {
-   delay(5000);
+   delay(y);
      // because 0.0927in
      forward(927/x);
      delay(y);
@@ -146,7 +148,19 @@ void Doggo() {
      turnRight(93);
      delay(y);
      forward(918/x);
+     //turnRight(21);
+     //^this would make the new starting line parallel to the first line of the dog, since the last line is not parallel to the first line
 }
+void StraightBoi(){
+    Doggo();
+    delay(y);
+//    turnLeft(10);
+//    delay(y);
+    turnLeft(i);
+    forward(z);
+    delay(y);
+}
+
 void loop() {
   // Read the sensors
   turnSensorUpdate();
@@ -158,12 +172,7 @@ void loop() {
   bool buttonPress = buttonA.getSingleDebouncedPress();
   if (buttonPress) { 
     while(1){
-    Doggo();
-    delay(y);
-    turnLeft(10);
-    delay(y);
-    forward(10);
-    delay(y);
+StraightBoi();
       }
 }
 }
