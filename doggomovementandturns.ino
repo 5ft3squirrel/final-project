@@ -109,17 +109,8 @@ void reverse(long count) {
   motors.setSpeeds(0, 0);
 }
 
-void loop() {
-  // Read the sensors
-  turnSensorUpdate();
-  int angle = (((int32_t)turnAngle >> 16) * 360) >> 16;
-  lcd.gotoXY(0, 0);
-  lcd.print(angle);
-  lcd.print(" ");
-  //if we press A, then it starts:
-  bool buttonPress = buttonA.getSingleDebouncedPress();
-  if (buttonPress) {
-     delay(5000);
+void Doggo() {
+   delay(5000);
      // because 0.0927in
      forward(927/x);
      delay(1000);
@@ -153,6 +144,22 @@ void loop() {
      delay(1000);
      turnRight(93);
      delay(1000);
-     forward(918/x);     
+     forward(918/x);
+}
+void loop() {
+  // Read the sensors
+  turnSensorUpdate();
+  int angle = (((int32_t)turnAngle >> 16) * 360) >> 16;
+  lcd.gotoXY(0, 0);
+  lcd.print(angle);
+  lcd.print(" ");
+  //if we press A, then it starts:
+  bool buttonPress = buttonA.getSingleDebouncedPress();
+  if (buttonPress) {
+     
+    while(1){
+    Doggo();
+    turnRight(2);
+      }
 }
 }
